@@ -1,0 +1,15 @@
+{
+  "name": "budget-play-app",
+  "version": "1.0.0",
+  "description": "Glorious",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "plaid": "^1.0.10"
+  }
+}
