@@ -27,34 +27,21 @@ const db = low('tmp/db.json');
 
 db.defaults({ transactions: [] }).value();
 
-// db._.mixin({
-//   createTransactions: function(array) {
-//     console.log(array);
-//     array.forEach( t => {
-//       var transaction = _(db.transactions)
-//       .where({_id: t._id})
-//       .value()
+var searchCategory = 'Debit'
 
-//       console.log(transaction);
+var query = db.get('transactions')
+  .filter({'category': [
+        searchCategory
+      ]})
+  .value()
 
-//       if(_.isEmpty(transaction)) {
-//         db.get('transactions')
-//         .push(t)
-//         .value()
-//       }
-//     })
-//   }
-// })
-
+console.log(query)
+console.log('Size: ' + _.size(query))
 
 // ---------------------------------------------------------------
 
-var access_token = '8c1a3ea14f768c659c682b6da5cbed143152316a78357270de6afeab111a2c2b66975918488140d1af39da8c18f0937fee101b5df3b7a4bbbeb3ada5754e28af544ddcec61d862b4f39892ed60a1f132';
-
-getConnectUserAsync(access_token).then(responses => {
-  var response = responses[0];
-
-  response.transactions.forEach(t => {
+function saveTransactions(transactions) {
+  transactions.transactions.forEach(t => {
     var isNewTransaction = _.isEmpty(db.get('transactions')
       .find({ _id: t._id })
       .value());
@@ -62,12 +49,25 @@ getConnectUserAsync(access_token).then(responses => {
     if(isNewTransaction) {
       db.get('transactions')
       .push(t)
-      .value()         
+      .value();
     }
 
-  })
+  return true;
+} 
 
-});
+
+// var access_token = '8c1a3ea14f768c659c682b6da5cbed143152316a78357270de6afeab111a2c2b66975918488140d1af39da8c18f0937fee101b5df3b7a4bbbeb3ada5754e28af544ddcec61d862b4f39892ed60a1f132';
+
+// getConnectUserAsync(access_token).then(responses => {
+//   var response = responses[0];
+
+// saveTransactions(response.transactions);
+
+//     }
+
+//   })
+
+// });
 
 // ---------------------------------------------------------------
 
