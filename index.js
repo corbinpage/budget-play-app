@@ -8,8 +8,8 @@ var _ = require('lodash');
 bluebird.promisifyAll(plaid);
 
 var client = new plaid.Client(
-  '',
-  '',
+  '5350d5346b49816b537be6c4',
+  'EXJKIqk4dgxm-YpVrPw1-U',
   plaid.environments.tartan
   );
 
