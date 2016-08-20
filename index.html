@@ -5,15 +5,15 @@
   <link rel="stylesheet" type="text/css" href="lib/treemap/style.css">
   <meta charset="utf-8">
 </head>
-<title>Spending Treemaps</title>
+<title>Spending Treemap</title>
 <body>
-  <h1>Spending Treemaps</h1>
+  <h1>Spending Treemap</h1>
 
   <p id="chart"></p>
 
   <aside>Click any cell to zoom in, or the top orange label to zoom out.</aside>
 
-  <p>Treemaps are a form of <a href="http://mbostock.github.com/d3/ex/treemap.html">space</a><a href="http://mbostock.github.com/d3/ex/pack.html">-filling</a> <a href="http://mbostock.github.com/d3/ex/sunburst.html">layout</a> where the area of each rectangle is proportional to its value. This example shows the size of files in a source tree.</p>
+  <p>Treemaps are a form of <a href="http://mbostock.github.com/d3/ex/treemap.html">space</a><a href="http://mbostock.github.com/d3/ex/pack.html">-filling</a> <a href="http://mbostock.github.com/d3/ex/sunburst.html">layout</a> where the area of each rectangle is proportional to its value.</p>
 
   <p>Treemaps visualize hierarchical data, but since often only the leaf nodes (files rather than folders) are drawn, it can be difficult to see the hierarchy. <a href="http://en.wikipedia.org/wiki/File:Tree_Map.png">Padding</a> is sometimes used to show the hierarchy via containment, though this introduces area distortion. <a href="http://www.win.tue.nl/~vanwijk/ctm.pdf">Cushion gradients</a> also indicate hierarchy, but are somewhat unintuitive (or perhaps just ugly).</p>
 
@@ -21,10 +21,6 @@
 
   <p>This visualization is implemented in <a href="http://d3js.org">D3.js</a>, based on an <a href="http://mbostock.github.com/d3/talk/20111018/treemap.html">earlier version</a> from my talk at SVG Open. Also see Nicolas Garcia Belmonte’s zoomable treemap of <a href="http://thejit.org/static/v20/Jit/Examples/Treemap/example1.html">music albums</a>, and The New York Times’ free-form zooming for <a href="http://www.nytimes.com/packages/html/newsgraphics/2011/0119-budget/">Obama’s 2012 budget proposal</a>. Note the subtle differences in behavior!</p>
 </body>
-<footer>
-  <aside>June 8, 2012</aside>
-  <a href="../" rel="author">Mike Bostock</a>
-</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
 <script src="lib/treemap/treemap.js" charset="utf-8"></script>
