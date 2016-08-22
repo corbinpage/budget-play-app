@@ -2,281 +2,54 @@
   "name": "categories",
   "children": [
     {
-      "name": "Food & Dining",
+      "name": "Income",
+      "hasChildren": true,
+      "type": "Income",
       "children": [
         {
-          "name": "Restaurants"
+          "name": "Paycheck",
+          "type": "Income"
         },
         {
-          "name": "Fast Food"
+          "name": "Investment",
+          "type": "Income"
         },
         {
-          "name": "Alcohol & Bars"
+          "name": "Returned Purchase",
+          "type": "Income"
         },
         {
-          "name": "Coffee Shops"
-        }
-      ]
-    },
-    {
-      "name": "Travel",
-      "children": [
-        {
-          "name": "Air Travel"
-        },
-        {
-          "name": "Train/Subway"
-        },
-        {
-          "name": "Train Travel"
-        },
-        {
-          "name": "Rental Car & Taxi"
-        },
-        {
-          "name": "Parking"
-        },
-        {
-          "name": "Auto & Transport"
-        },
-        {
-          "name": "Hotel"
-        },
-        {
-          "name": "Vacation"
-        },
-        {
-          "name": "Gas & Fuel"
-        },
-        {
-          "name": "Bus"
-        },
-        {
-          "name": "Public Transportation"
-        },
-        {
-          "name": "Travel Comp"
-        }
-      ]
-    },
-    {
-      "name": "Shopping",
-      "children": [
-        {
-          "name": "Pharmacy"
-        },
-        {
-          "name": "Music"
-        },
-        {
-          "name": "Electronics & Software"
-        },
-        {
-          "name": "Laundry"
-        },
-        {
-          "name": "Home Supplies"
-        },
-        {
-          "name": "Home"
-        },
-        {
-          "name": "Books"
-        },
-        {
-          "name": "Sporting Goods"
-        },
-        {
-          "name": "Lawn & Garden"
-        },
-        {
-          "name": "Furnishings"
-        },
-        {
-          "name": "Clothing"
-        },
-        {
-          "name": "Pharmacy Stuff"
-        },
-        {
-          "name": "Printing"
-        },
-        {
-          "name": "Hair"
-        },
-        {
-          "name": "Service & Parts"
-        }
-      ]
-    },
-    {
-      "name": "Health",
-      "children": [
-        {
-          "name": "Eyecare"
-        },
-        {
-          "name": "Doctor"
-        }
-      ]
-    },
-    {
-      "name": "Payment",
-      "children": [
-        {
-          "name": "Credit Card"
-        },
-        {
-          "name": "Mortgage & Rent"
-        }
-      ]
-    },
-    {
-      "name": "Community",
-      "children": [
-        {
-          "name": "Charity"
-        },
-        {
-          "name": "Gift"
-        },
-        {
-          "name": "Gifts & Donations"
-        },
-        {
-          "name": "Education"
-        }
-      ]
-    },
-    {
-      "name": "Service",
-      "children": [
-        {
-          "name": "Home Improvement"
-        },
-        {
-          "name": "Business Services"
-        },
-        {
-          "name": "Bills & Utilities"
-        },
-        {
-          "name": "Utilities"
-        },
-        {
-          "name": "Internet"
-        },
-        {
-          "name": "Personal Care"
-        },
-        {
-          "name": "Health Insurance"
-        },
-        {
-          "name": "Home Services"
-        },
-        {
-          "name": "Shipping"
-        },
-        {
-          "name": "Mobile Phone"
-        },
-        {
-          "name": "Television"
-        },
-        {
-          "name": "Home Phone"
-        }
-      ]
-    },
-    {
-      "name": "Investments",
-      "children": [
-        {
-          "name": "Interest Income"
-        },
-        {
-          "name": "Financial"
-        }
-      ]
-    },
-    {
-      "name": "Uncategorized",
-      "children": []
-    },
-    {
-      "name": "Financial",
-      "children": [
-        {
-          "name": "Cash & ATM"
-        },
-        {
-          "name": "Cash Withdrawl"
-        },
-        {
-          "name": "Check"
-        },
-        {
-          "name": "Savings"
-        },
-        {
-          "name": "Income"
-        },
-        {
-          "name": "Transfer"
-        },
-        {
-          "name": "Taxes"
-        },
-        {
-          "name": "Federal Tax"
-        },
-        {
-          "name": "State Tax"
-        },
-        {
-          "name": "Investment Income"
-        },
-        {
-          "name": "Sell"
-        },
-        {
-          "name": "Bonus"
-        },
-        {
-          "name": "Reimbursement"
-        },
-        {
-          "name": "Student Loan"
-        },
-        {
-          "name": "Fees"
-        },
-        {
-          "name": "Service Fee"
+          "name": "Bonus",
+          "type": "Income"
         },
         {
-          "name": "ATM Fee"
+          "name": "Interest Income",
+          "type": "Income"
         },
         {
-          "name": "Misc Expenses"
+          "name": "Reimbursement",
+          "type": "Income"
         },
         {
-          "name": "Bank Fee"
+          "name": "Rental Income",
+          "type": "Income"
         },
         {
-          "name": "Fees & Charges"
+          "name": "Investment Income",
+          "type": "Income",
+          "isCustomCategory": true
         }
       ]
     },
     {
       "name": "Entertainment",
+      "hasChildren": true,
       "children": [
         {
-          "name": "Hobbies"
+          "name": "Arts"
         },
         {
-          "name": "Sports"
+          "name": "Music"
         },
         {
           "name": "Movies & DVDs"
@@ -285,13 +58,365 @@
           "name": "Newspapers & Magazines"
         },
         {
+          "name": "Amusement",
+          "isCustomCategory": true
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Tuition"
+        },
+        {
+          "name": "Student Loan"
+        },
+        {
+          "name": "Books & Supplies"
+        }
+      ]
+    },
+    {
+      "name": "Shopping",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Clothing"
+        },
+        {
+          "name": "Books"
+        },
+        {
+          "name": "Electronics & Software"
+        },
+        {
+          "name": "Hobbies"
+        },
+        {
+          "name": "Sporting Goods"
+        }
+      ]
+    },
+    {
+      "name": "Personal Care",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Laundry"
+        },
+        {
+          "name": "Hair"
+        },
+        {
+          "name": "Spa & Massage"
+        }
+      ]
+    },
+    {
+      "name": "Home",
+      "hasChildren": true,
+      "isCustomCategory": true,
+      "children": [
+        {
+          "name": "Furnishings",
+          "isCustomCategory": true
+        },
+        {
+          "name": "Home Improvement ",
+          "isCustomCategory": true
+        },
+        {
+          "name": "Home Services",
+          "isCustomCategory": true
+        },
+        {
+          "name": "Home Supplies",
+          "isCustomCategory": true
+        },
+        {
+          "name": "Lawn & Garden",
+          "isCustomCategory": true
+        }
+      ]
+    },
+    {
+      "name": "Kids",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Kids Activites"
+        },
+        {
+          "name": "Allowance"
+        },
+        {
+          "name": "Baby Supplies"
+        },
+        {
+          "name": "Babysitter & Daycare"
+        },
+        {
+          "name": "Child Support"
+        },
+        {
+          "name": "Toys"
+        }
+      ]
+    },
+    {
+      "name": "Food & Dining",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Groceries"
+        },
+        {
+          "name": "Coffee shops"
+        },
+        {
+          "name": "Fast Food"
+        },
+        {
+          "name": "Restaurants"
+        },
+        {
+          "name": "Alchohol & Bars"
+        }
+      ]
+    },
+    {
+      "name": "Gifts & Donations",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Charity"
+        },
+        {
+          "name": "Gift"
+        }
+      ]
+    },
+    {
+      "name": "Investments",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Deposit"
+        },
+        {
+          "name": "Withdrawal"
+        },
+        {
+          "name": "Dividends & Cap Gains"
+        },
+        {
+          "name": "Buy"
+        },
+        {
+          "name": "Sell"
+        },
+        {
+          "name": "Financial",
+          "isCustomCategory": true
+        },
+        {
+          "name": "Savings",
+          "isCustomCategory": true
+        }
+      ]
+    },
+    {
+      "name": "Health & Fitness",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Dentist"
+        },
+        {
+          "name": "Doctor"
+        },
+        {
+          "name": "Eyecare"
+        },
+        {
+          "name": "Pharmacy"
+        },
+        {
+          "name": "Health Insurance"
+        },
+        {
           "name": "Gym"
         },
         {
-          "name": "Amusement"
+          "name": "Sports"
         },
         {
-          "name": "Health & Fitness"
+          "name": "Pharmacy Stuff",
+          "isCustomCategory": true
+        }
+      ]
+    },
+    {
+      "name": "Bills & Utilities",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Television"
+        },
+        {
+          "name": "Home Phone"
+        },
+        {
+          "name": "Internet"
+        },
+        {
+          "name": "Mobile Phone"
+        },
+        {
+          "name": "Utilities"
+        },
+        {
+          "name": "Mortgage & Rent",
+          "isCustomCategory": true
+        },
+        {
+          "name": "Payment; Credit Card",
+          "isCustomCategory": true
+        }
+      ]
+    },
+    {
+      "name": "Travel",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Air Travel"
+        },
+        {
+          "name": "Hotel"
+        },
+        {
+          "name": "Rental Car & Taxi"
+        },
+        {
+          "name": "Vacation"
+        },
+        {
+          "name": "Bus",
+          "isCustomCategory": true
+        }
+      ]
+    },
+    {
+      "name": "Fees & Charges",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Service Fee"
+        },
+        {
+          "name": "Late Fee"
+        },
+        {
+          "name": "Finance Charge"
+        },
+        {
+          "name": "ATM Fee"
+        },
+        {
+          "name": "Bank Fee"
+        },
+        {
+          "name": "Trade Comissions"
+        }
+      ]
+    },
+    {
+      "name": "Uncategorized",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Cash & ATM"
+        },
+        {
+          "name": "Check"
+        },
+        {
+          "name": "Misc Expenses",
+          "isCustomCategory": true
+        }
+      ]
+    },
+    {
+      "name": "Auto & Transport",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Gas & Fuel"
+        },
+        {
+          "name": "Parking"
+        },
+        {
+          "name": "Service & Auto Parts"
+        },
+        {
+          "name": "Auto Payment"
+        },
+        {
+          "name": "Auto Insurance"
+        },
+        {
+          "name": "Public Transportation",
+          "isCustomCategory": true
+        },
+        {
+          "name": "Service & Parts",
+          "isCustomCategory": true
+        }
+      ]
+    },
+    {
+      "name": "Business Services",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Advertising"
+        },
+        {
+          "name": "Office Supplies"
+        },
+        {
+          "name": "Printing"
+        },
+        {
+          "name": "Shipping"
+        },
+        {
+          "name": "Legal"
+        }
+      ]
+    },
+    {
+      "name": "Taxes",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Federal Tax"
+        },
+        {
+          "name": "State Tax"
+        },
+        {
+          "name": "Local Tax"
+        },
+        {
+          "name": "Sales Tax"
+        },
+        {
+          "name": "Property Tax"
         }
       ]
     }

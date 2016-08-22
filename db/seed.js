@@ -28,7 +28,7 @@ function convertMintCsvToDb(transaction) {
     "_id": uuid(),
     "amount": Number(transaction[3]),
     "date": transaction[0],
-    "year-month": _.join(_.split(transaction[0], '-', 2),'-'),
+    "year-month": _.join([_.split(transaction[0], '/')[2],_.split(transaction[0], '/')[0]],'-'),
     "name": transaction[1],
     "originalName": transaction[2],
     "pending": false,
@@ -51,17 +51,17 @@ function convertMintCsvToDb(transaction) {
 var filePath = path.join(__dirname, '../tmp/seed-8-19-2016.csv');
 fs.readFile(filePath, {encoding: 'utf-8'}, function(err,data){
   parse(data, {}, function(err, output){
+    output.shift();
     var transactions = output.map(convertMintCsvToDb);
 
-    db.defaults({ transactions: [] }).value();
-    db.get('transactions')
-    .push(transactions)
-    .value();
+    console.log('Size: ' + _.size(transactions))
 
-    var query = db.get('transactions')
-    .value()
+    db.defaults({ transactions: transactions }).value();
 
-    console.log('Size: ' + _.size(query))
+    // var query = db.get('transactions')
+    // .value()
+
+    // console.log('Size: ' + _.size(query))
 
   });
 });

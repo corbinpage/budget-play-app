@@ -5,11 +5,7 @@ var _ = require('lodash');
 const categories = require('./categories/categories.json');
 const db = low('tmp/db.json');
 
-console.log(categories);
-
-
 function queryCategoryAmount(category) {
-
   var amounts = db.get('transactions')
   .filter({'category': [
     category
@@ -23,14 +19,17 @@ function queryCategoryAmount(category) {
 }
 
 function transformNode(node) {
-  node.value = queryCategoryAmount(node.name);
-
   if(_.isEmpty(node.children)) {
+    node.value = queryCategoryAmount(node.name);
     return node;
   } else {
     var children = node.children.map(c => {
       return transformNode(c);
     })
+    children.push({
+      "name": "Miscellaneous",
+      "value": queryCategoryAmount(node.name)
+    });
     node.children = children;
     return node;
   }
