@@ -7,11 +7,11 @@ Airtable.configure({
   apiKey: ''
 });
 var base = Airtable.base('appl4sMLlQp13Je1K');
-var db = low('tmp/db2.json');
+var db = low('tmp/db.json');
 var count = 1;
-var transactions;
+var transactions = [];
 
-base('Transactions').select({
+base('2016 Transactions').select({
     // Selecting the first 3 records in Main View:
     // maxRecords: 3,
     view: "Main View"
@@ -24,13 +24,14 @@ base('Transactions').select({
     //     count++;
     // });
 
-transactions = records.map(record => {
+var transactionPage = records.map(record => {
   console.log('Retrieved ', count, ': ', record.get('Description'), record.get('Bucket'), record.get('Amount'));
   count++;
   return {
+    "id": Number(record.get('ID')),
     "amount": Number(record.get('Amount')),
     "date": record.get('Date'),
-    "year-month": _.join([_.split(record.get('Date'), '/')[2],_.split(record.get('Date'), '/')[0]],'-'),
+    "year-month": _.join([_.split(record.get('Date'), '-')[0],_.split(record.gets('Date'), '-')[1]],'-'),
     "name": record.get('Description'),
     "originalName": record.get('Original Description'),
     "category": record.get('Category'),
@@ -40,6 +41,7 @@ transactions = records.map(record => {
   };
 });
 
+transactions = transactions.concat(transactionPage);
 
     // To fetch the next page of records, call `fetchNextPage`.
     // If there are more records, `page` will get called again.

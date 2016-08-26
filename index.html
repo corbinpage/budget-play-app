@@ -1,29 +1,53 @@
 
 <!DOCTYPE html>
-<html class="ocks-org do-not-copy">
+<html>
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="lib/treemap/style.css">
   <meta charset="utf-8">
 </head>
-<title>2016 Spending Treemap</title>
+<title>2016 Spending</title>
 <body>
-  <h1>2016 SpendingTreemap</h1>
+  <div class="container">
+    <div class="row">
+      <h1>Monthly Expenses</h1>
 
-  <p id="chart"></p>
+      <div id="expensesByMonth"></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <iframe class="airtable-embed" src="https://airtable.com/embed/shrm6qLscri7qtM96?backgroundColor=green&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    </div>
+  </div>
 
-  <aside>Click any cell to zoom in, or the top orange label to zoom out.</aside>
 
-  <p>Treemaps are a form of <a href="http://mbostock.github.com/d3/ex/treemap.html">space</a><a href="http://mbostock.github.com/d3/ex/pack.html">-filling</a> <a href="http://mbostock.github.com/d3/ex/sunburst.html">layout</a> where the area of each rectangle is proportional to its value.</p>
 
-  <p>Treemaps visualize hierarchical data, but since often only the leaf nodes (files rather than folders) are drawn, it can be difficult to see the hierarchy. <a href="http://en.wikipedia.org/wiki/File:Tree_Map.png">Padding</a> is sometimes used to show the hierarchy via containment, though this introduces area distortion. <a href="http://www.win.tue.nl/~vanwijk/ctm.pdf">Cushion gradients</a> also indicate hierarchy, but are somewhat unintuitive (or perhaps just ugly).</p>
+  <div class="container">
+    <div class="row">
+      <h1>2016 SpendingTreemap</h1>
 
-  <p>The treemap above uses interaction to reveal the hierarchy incrementally: clicking on a node zooms in. Only two levels of the hierarchy are visible at a time. This allows the layout’s aspect ratio (ideally φ) to be optimized for the current view, rather than computing a global layout. It also allows the exploration of arbitrarily-large datasets: data can be lazily-loaded and positioned on zoom!</p>
+      <p id="chart"></p>
 
-  <p>This visualization is implemented in <a href="http://d3js.org">D3.js</a>, based on an <a href="http://mbostock.github.com/d3/talk/20111018/treemap.html">earlier version</a> from my talk at SVG Open. Also see Nicolas Garcia Belmonte’s zoomable treemap of <a href="http://thejit.org/static/v20/Jit/Examples/Treemap/example1.html">music albums</a>, and The New York Times’ free-form zooming for <a href="http://www.nytimes.com/packages/html/newsgraphics/2011/0119-budget/">Obama’s 2012 budget proposal</a>. Note the subtle differences in behavior!</p>
+      <aside>Click any cell to zoom in, or the top orange label to zoom out.</aside>
+
+      <p>Treemaps are a form of <a href="http://mbostock.github.com/d3/ex/treemap.html">space</a><a href="http://mbostock.github.com/d3/ex/pack.html">-filling</a> <a href="http://mbostock.github.com/d3/ex/sunburst.html">layout</a> where the area of each rectangle is proportional to its value.</p>
+
+      <p>Treemaps visualize hierarchical data, but since often only the leaf nodes (files rather than folders) are drawn, it can be difficult to see the hierarchy. <a href="http://en.wikipedia.org/wiki/File:Tree_Map.png">Padding</a> is sometimes used to show the hierarchy via containment, though this introduces area distortion. <a href="http://www.win.tue.nl/~vanwijk/ctm.pdf">Cushion gradients</a> also indicate hierarchy, but are somewhat unintuitive (or perhaps just ugly).</p>
+
+      <p>The treemap above uses interaction to reveal the hierarchy incrementally: clicking on a node zooms in. Only two levels of the hierarchy are visible at a time. This allows the layout’s aspect ratio (ideally φ) to be optimized for the current view, rather than computing a global layout. It also allows the exploration of arbitrarily-large datasets: data can be lazily-loaded and positioned on zoom!</p>
+
+      <p>This visualization is implemented in <a href="http://d3js.org">D3.js</a>, based on an <a href="http://mbostock.github.com/d3/talk/20111018/treemap.html">earlier version</a> from my talk at SVG Open. Also see Nicolas Garcia Belmonte’s zoomable treemap of <a href="http://thejit.org/static/v20/Jit/Examples/Treemap/example1.html">music albums</a>, and The New York Times’ free-form zooming for <a href="http://www.nytimes.com/packages/html/newsgraphics/2011/0119-budget/">Obama’s 2012 budget proposal</a>. Note the subtle differences in behavior!</p>
+    </div>
+  </div>
 </body>
-
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
 <!-- <script src="lib/treemap/treemap.js" charset="utf-8"></script> -->
 <script src="lib/bubble-chart/bubble-chart.js" charset="utf-8"></script>
-<!-- <script src="index.js" charset="utf-8"></script> -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="index.js" charset="utf-8"></script>
 </html>
