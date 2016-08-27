@@ -11,7 +11,8 @@ var data = {};
 data.categories = categorizeTransactions(db,categoriesTemplate);
 data.expensesByMonth = queryexpensesByMonth(db,'2016');
 
-fs.writeFile("tmp/parsedDb.json", JSON.stringify(data));
+fs.unlinkSync('tmp/parsedDb.json')
+fs.writeFile('tmp/parsedDb.json', JSON.stringify(data));
 
 // Read in all transactions from airtable
 // Parse categories
@@ -34,11 +35,9 @@ function queryexpensesByMonth(db, year) {
     .map('amount')
     .value();
 
-    var totalAmount = _.round(_.sum(amounts));
-
     return {
       "year-month": yearMonth,
-      "amount": totalAmount > 0 ? totalAmount : 0
+      "amount": _.round(_.sum(amounts))
     }
   });
 
@@ -59,9 +58,7 @@ function queryCategoryAmount(category, db) {
   .map('amount')
   .value();
 
-  var totalAmount = _.round(_.sum(amounts));
-
-  return totalAmount > 0 ? totalAmount : 0;
+  return _.round(_.sum(amounts));
 }
 
 function categorizeNode(node, db) {
