@@ -14,6 +14,7 @@
     "highcharts": "^4.2.6",
     "http-server": "^0.9.0",
     "lowdb": "^0.13.1",
+    "moment": "^2.14.1",
     "plaid": "^1.0.10"
   }
 }
