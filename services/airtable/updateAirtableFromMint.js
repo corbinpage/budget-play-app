@@ -13,17 +13,12 @@ function loadMintTransactions(year) {
 }
 
 function compareMintAirtableTransactions(airtableTransactions) {
-
-  // console.log(Transaction);
-
   var currentTransactions = airtableTransactions.map(t => {
     var temp = new Transaction('Airtable', t);
     return {name: temp.name, mintAmount: temp.mintAmount, date: temp.date};
   })
 
-  // console.log(currentTransactions);
-
-  var filePath = path.join(__dirname, '../../tmp/seed-8-19-2016.csv');
+  var filePath = path.join(__dirname, '../../tmp/seed-9-2-2016.csv');
   fs.readFile(filePath, {encoding: 'utf-8'}, function(err,data){
     parse(data, {}, function(err, output){
       output.shift();

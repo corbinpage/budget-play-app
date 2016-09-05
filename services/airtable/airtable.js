@@ -2,6 +2,7 @@ var fs = require('fs');
 var low = require('lowdb');
 var _ = require('lodash');
 var Airtable = require('airtable');
+var Transaction = require('../buddy-app/transaction');
 
 Airtable.configure({
   endpointUrl: 'https://api.airtable.com',
@@ -107,6 +108,37 @@ exports.getAllTransactions = function (sheet, callback) {
   });
 };
 
+exports.loadAllTransactions = function (sheet, callback) {
+  var database = Airtable.base('appl4sMLlQp13Je1K');
+  var rows = [];
+
+  database(sheet).select({
+    sort: [{field: "ID", direction: "desc"}],
+    view: "Main View"
+  }).eachPage(function page(records, fetchNextPage) {
+
+    // This function (`page`) will get called for each page of records.
+
+    rows = rows.concat(records);
+
+    // To fetch the next page of records, call `fetchNextPage`.
+    // If there are more records, `page` will get called again.
+    // If there are no more records, `done` will get called.
+    fetchNextPage();
+
+  }, function done(error) {
+    if (error) {
+      console.log(error);
+    } else {
+      var transactions = rows.map(t => {
+        var temp = new Transaction('Airtable', t);
+        return temp;
+      })
+      callback(transactions);
+    }
+  });
+};
+
 exports.writeTransaction = function (transaction) {
   var database = Airtable.base('appl4sMLlQp13Je1K');
 
@@ -121,7 +153,7 @@ exports.writeTransaction = function (transaction) {
     "Bucket": transaction.bucket,
   }, function(err, record) {
     if (err) { console.log(err); return; }
-    console.log(record);
+    // console.log(record);
   });
 
 };
