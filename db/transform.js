@@ -15,6 +15,7 @@ myAirtable.loadAllTransactions('2016 Transactions',function(transactions) {
   data.categories = categorizeTransactions(transactions,categoriesTemplate);
   data.expensesByMonth = queryExpensesByMonth(transactions);
   data.buckets = querybucketTotals(transactions);
+  data.transactions = transactions;
 
   fs.unlinkSync('tmp/parsedDb.json')
   fs.writeFile('tmp/parsedDb.json', JSON.stringify(data));

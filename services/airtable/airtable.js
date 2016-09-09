@@ -6,7 +6,7 @@ var Transaction = require('../buddy-app/transaction');
 
 Airtable.configure({
   endpointUrl: 'https://api.airtable.com',
-  apiKey: ''
+  apiKey: 'keyHbjU0hdcEpQAaG'
 });
 var base = Airtable.base('appl4sMLlQp13Je1K');
 
