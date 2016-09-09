@@ -5,10 +5,15 @@ const Transaction = require('../services/buddy-app/transaction');
 const categoriesTemplate = require('./categories/categories.json');
 
 var data = {};
+const year = 2016;
+const yearMonths = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'].map(m => {
+  return year + '-' + m
+});
+
 
 myAirtable.loadAllTransactions('2016 Transactions',function(transactions) {
   data.categories = categorizeTransactions(transactions,categoriesTemplate);
-  data.expensesByMonth = queryExpensesByMonth(transactions,'2016');
+  data.expensesByMonth = queryExpensesByMonth(transactions);
   data.buckets = querybucketTotals(transactions);
 
   fs.unlinkSync('tmp/parsedDb.json')
@@ -44,25 +49,31 @@ function querybucketTotals(transactions) {
   return buckets;
 }
 
-function queryExpensesByMonth(transactions, year) {
-  var months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
-  
-  return months.map(m => {
-    yearMonth =  year + '-' + m;
-
-    var amounts = _.filter(transactions, 
-    {
-      "bucket": ["Expense"],
-      'yearMonth': yearMonth
-    });
-
-    var totalAmount = _.round(_.sum(amounts.map(t => {return t.amount})));
-
-    return {
-      "year-month": yearMonth,
-      "amount": totalAmount
-    }
+function queryExpensesByMonth(transactions) {
+  var expenses = _.filter(transactions, 
+  {
+    "bucket": ["Expense"]
   });
+
+  var groupMonthlyExpenses = _.groupBy(expenses, e => e.yearMonth);
+  var expenseTotals = [];
+
+  _.forOwn(groupMonthlyExpenses, (value, key, object) => {
+    var monthlyExpenseTotals = value.map(t => t.amount);
+    var monthlyRecurringExpenseTotals = _.filter(value, 
+      {
+        "bucket": ["Recurring"]
+      })
+      .map(t => t.amount)
+
+    expenseTotals.push({
+      month: key,
+      expenseTotal: _.round(_.sum(monthlyExpenseTotals)),
+      recurringExpenseTotal: _.round(_.sum(monthlyRecurringExpenseTotals))
+    })
+  });
+
+  return _.sortBy(expenseTotals,'month');
 }
 
 function categorizeTransactions(transactions,categories) {
