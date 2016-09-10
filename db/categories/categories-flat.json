@@ -1,0 +1,562 @@
+[
+  {
+    "packageName": "Income",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Income",
+    "className": "Paycheck",
+    "value": 10
+  },
+  {
+    "packageName": "Income",
+    "className": "Investment",
+    "value": 10
+  },
+  {
+    "packageName": "Income",
+    "className": "Returned Purchase",
+    "value": 10
+  },
+  {
+    "packageName": "Income",
+    "className": "Bonus",
+    "value": 10
+  },
+  {
+    "packageName": "Income",
+    "className": "Interest Income",
+    "value": 10
+  },
+  {
+    "packageName": "Income",
+    "className": "Reimbursement",
+    "value": 10
+  },
+  {
+    "packageName": "Income",
+    "className": "Rental Income",
+    "value": 10
+  },
+  {
+    "packageName": "Income",
+    "className": "Investment Income",
+    "value": 10
+  },
+  {
+    "packageName": "Entertainment",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Entertainment",
+    "className": "Arts",
+    "value": 10
+  },
+  {
+    "packageName": "Entertainment",
+    "className": "Music",
+    "value": 10
+  },
+  {
+    "packageName": "Entertainment",
+    "className": "Movies & DVDs",
+    "value": 10
+  },
+  {
+    "packageName": "Entertainment",
+    "className": "Newspapers & Magazines",
+    "value": 10
+  },
+  {
+    "packageName": "Entertainment",
+    "className": "Amusement",
+    "value": 10
+  },
+  {
+    "packageName": "Education",
+    "className": "Tuition",
+    "value": 10
+  },
+  {
+    "packageName": "Education",
+    "className": "Student Loan",
+    "value": 10
+  },
+  {
+    "packageName": "Education",
+    "className": "Books & Supplies",
+    "value": 10
+  },
+  {
+    "packageName": "Shopping",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Shopping",
+    "className": "Clothing",
+    "value": 10
+  },
+  {
+    "packageName": "Shopping",
+    "className": "Books",
+    "value": 10
+  },
+  {
+    "packageName": "Shopping",
+    "className": "Electronics & Software",
+    "value": 10
+  },
+  {
+    "packageName": "Shopping",
+    "className": "Hobbies",
+    "value": 10
+  },
+  {
+    "packageName": "Shopping",
+    "className": "Sporting Goods",
+    "value": 10
+  },
+  {
+    "packageName": "Personal Care",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Personal Care",
+    "className": "Laundry",
+    "value": 10
+  },
+  {
+    "packageName": "Personal Care",
+    "className": "Hair",
+    "value": 10
+  },
+  {
+    "packageName": "Personal Care",
+    "className": "Spa & Massage",
+    "value": 10
+  },
+  {
+    "packageName": "Home",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Home",
+    "className": "Furnishings",
+    "value": 10
+  },
+  {
+    "packageName": "Home",
+    "className": "Home Improvement",
+    "value": 10
+  },
+  {
+    "packageName": "Home",
+    "className": "Home Services",
+    "value": 10
+  },
+  {
+    "packageName": "Home",
+    "className": "Home Supplies",
+    "value": 10
+  },
+  {
+    "packageName": "Home",
+    "className": "Lawn & Garden",
+    "value": 10
+  },
+  {
+    "packageName": "Kids",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Kids",
+    "className": "Kids Activites",
+    "value": 10
+  },
+  {
+    "packageName": "Kids",
+    "className": "Allowance",
+    "value": 10
+  },
+  {
+    "packageName": "Kids",
+    "className": "Baby Supplies",
+    "value": 10
+  },
+  {
+    "packageName": "Kids",
+    "className": "Babysitter & Daycare",
+    "value": 10
+  },
+  {
+    "packageName": "Kids",
+    "className": "Child Support",
+    "value": 10
+  },
+  {
+    "packageName": "Kids",
+    "className": "Toys",
+    "value": 10
+  },
+  {
+    "packageName": "Food & Dining",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Food & Dining",
+    "className": "Groceries",
+    "value": 10
+  },
+  {
+    "packageName": "Food & Dining",
+    "className": "Coffee shops",
+    "value": 10
+  },
+  {
+    "packageName": "Food & Dining",
+    "className": "Fast Food",
+    "value": 10
+  },
+  {
+    "packageName": "Food & Dining",
+    "className": "Restaurants",
+    "value": 10
+  },
+  {
+    "packageName": "Food & Dining",
+    "className": "Alchohol & Bars",
+    "value": 10
+  },
+  {
+    "packageName": "Gifts & Donations",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Gifts & Donations",
+    "className": "Charity",
+    "value": 10
+  },
+  {
+    "packageName": "Gifts & Donations",
+    "className": "Gift",
+    "value": 10
+  },
+  {
+    "packageName": "Investments",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Investments",
+    "className": "Deposit",
+    "value": 10
+  },
+  {
+    "packageName": "Investments",
+    "className": "Withdrawal",
+    "value": 10
+  },
+  {
+    "packageName": "Investments",
+    "className": "Dividends & Cap Gains",
+    "value": 10
+  },
+  {
+    "packageName": "Investments",
+    "className": "Buy",
+    "value": 10
+  },
+  {
+    "packageName": "Investments",
+    "className": "Sell",
+    "value": 10
+  },
+  {
+    "packageName": "Financial",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Financial",
+    "className": "Savings",
+    "value": 10
+  },
+  {
+    "packageName": "Health & Fitness",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Health & Fitness",
+    "className": "Dentist",
+    "value": 10
+  },
+  {
+    "packageName": "Health & Fitness",
+    "className": "Doctor",
+    "value": 10
+  },
+  {
+    "packageName": "Health & Fitness",
+    "className": "Eyecare",
+    "value": 10
+  },
+  {
+    "packageName": "Health & Fitness",
+    "className": "Pharmacy",
+    "value": 10
+  },
+  {
+    "packageName": "Health & Fitness",
+    "className": "Health Insurance",
+    "value": 10
+  },
+  {
+    "packageName": "Health & Fitness",
+    "className": "Gym",
+    "value": 10
+  },
+  {
+    "packageName": "Health & Fitness",
+    "className": "Sports",
+    "value": 10
+  },
+  {
+    "packageName": "Health & Fitness",
+    "className": "Pharmacy Stuff",
+    "value": 10
+  },
+  {
+    "packageName": "Bills & Utilities",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Bills & Utilities",
+    "className": "Television",
+    "value": 10
+  },
+  {
+    "packageName": "Bills & Utilities",
+    "className": "Home Phone",
+    "value": 10
+  },
+  {
+    "packageName": "Bills & Utilities",
+    "className": "Internet",
+    "value": 10
+  },
+  {
+    "packageName": "Bills & Utilities",
+    "className": "Mobile Phone",
+    "value": 10
+  },
+  {
+    "packageName": "Bills & Utilities",
+    "className": "Utilities",
+    "value": 10
+  },
+  {
+    "packageName": "Bills & Utilities",
+    "className": "Mortgage & Rent",
+    "value": 10
+  },
+  {
+    "packageName": "Bills & Utilities",
+    "className": "Payment; Credit Card",
+    "value": 10
+  },
+  {
+    "packageName": "Travel",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Travel",
+    "className": "Air Travel",
+    "value": 10
+  },
+  {
+    "packageName": "Travel",
+    "className": "Hotel",
+    "value": 10
+  },
+  {
+    "packageName": "Travel",
+    "className": "Rental Car & Taxi",
+    "value": 10
+  },
+  {
+    "packageName": "Travel",
+    "className": "Vacation",
+    "value": 10
+  },
+  {
+    "packageName": "Travel",
+    "className": "Bus",
+    "value": 10
+  },
+  {
+    "packageName": "Fees & Charges",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Fees & Charges",
+    "className": "Service Fee",
+    "value": 10
+  },
+  {
+    "packageName": "Fees & Charges",
+    "className": "Late Fee",
+    "value": 10
+  },
+  {
+    "packageName": "Fees & Charges",
+    "className": "Finance Charge",
+    "value": 10
+  },
+  {
+    "packageName": "Fees & Charges",
+    "className": "ATM Fee",
+    "value": 10
+  },
+  {
+    "packageName": "Fees & Charges",
+    "className": "Bank Fee",
+    "value": 10
+  },
+  {
+    "packageName": "Fees & Charges",
+    "className": "Trade Comissions",
+    "value": 10
+  },
+  {
+    "packageName": "Uncategorized",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Uncategorized",
+    "className": "Cash & ATM",
+    "value": 10
+  },
+  {
+    "packageName": "Uncategorized",
+    "className": "Check",
+    "value": 10
+  },
+  {
+    "packageName": "Uncategorized",
+    "className": "Misc Expenses",
+    "value": 10
+  },
+  {
+    "packageName": "Auto & Transport",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Auto & Transport",
+    "className": "Gas & Fuel",
+    "value": 10
+  },
+  {
+    "packageName": "Auto & Transport",
+    "className": "Parking",
+    "value": 10
+  },
+  {
+    "packageName": "Auto & Transport",
+    "className": "Service & Auto Parts",
+    "value": 10
+  },
+  {
+    "packageName": "Auto & Transport",
+    "className": "Auto Payment",
+    "value": 10
+  },
+  {
+    "packageName": "Auto & Transport",
+    "className": "Auto Insurance",
+    "value": 10
+  },
+  {
+    "packageName": "Auto & Transport",
+    "className": "Public Transportation",
+    "value": 10
+  },
+  {
+    "packageName": "Auto & Transport",
+    "className": "Service & Parts",
+    "value": 10
+  },
+  {
+    "packageName": "Business Services",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Business Services",
+    "className": "Advertising",
+    "value": 10
+  },
+  {
+    "packageName": "Business Services",
+    "className": "Office Supplies",
+    "value": 10
+  },
+  {
+    "packageName": "Business Services",
+    "className": "Printing",
+    "value": 10
+  },
+  {
+    "packageName": "Business Services",
+    "className": "Shipping",
+    "value": 10
+  },
+  {
+    "packageName": "Business Services",
+    "className": "Legal",
+    "value": 10
+  },
+  {
+    "packageName": "Taxes",
+    "className": "Miscellaneous",
+    "value": 10
+  },
+  {
+    "packageName": "Taxes",
+    "className": "Federal Tax",
+    "value": 10
+  },
+  {
+    "packageName": "Taxes",
+    "className": "State Tax",
+    "value": 10
+  },
+  {
+    "packageName": "Taxes",
+    "className": "Local Tax",
+    "value": 10
+  },
+  {
+    "packageName": "Taxes",
+    "className": "Sales Tax",
+    "value": 10
+  },
+  {
+    "packageName": "Taxes",
+    "className": "Property Tax",
+    "value": 10
+  }
+]

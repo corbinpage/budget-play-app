@@ -2,7 +2,6 @@ const fs = require('fs');
 const _ = require('lodash');
 const myAirtable = require('../services/airtable/airtable');
 const Transaction = require('../services/buddy-app/transaction');
-const categoriesTemplate = require('./categories/categories.json');
 
 var data = {};
 const year = 2016;
@@ -12,10 +11,13 @@ const yearMonths = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', 
 
 
 myAirtable.loadAllTransactions('2016 Transactions',function(transactions) {
-  data.categories = categorizeTransactions(transactions,categoriesTemplate);
+  data.categories = categorizeExpenses(transactions);
   data.expensesByMonth = queryExpensesByMonth(transactions);
   data.buckets = querybucketTotals(transactions);
-  data.transactions = transactions;
+  data.transactions = _.filter(transactions, 
+  {
+    "bucket": ["Expense"]
+  });;
 
   fs.unlinkSync('tmp/parsedDb.json')
   fs.writeFile('tmp/parsedDb.json', JSON.stringify(data));
@@ -62,10 +64,10 @@ function queryExpensesByMonth(transactions) {
   _.forOwn(groupMonthlyExpenses, (value, key, object) => {
     var monthlyExpenseTotals = value.map(t => t.amount);
     var monthlyRecurringExpenseTotals = _.filter(value, 
-      {
-        "bucket": ["Recurring"]
-      })
-      .map(t => t.amount)
+    {
+      "bucket": ["Recurring"]
+    })
+    .map(t => t.amount)
 
     expenseTotals.push({
       month: key,
@@ -77,15 +79,48 @@ function queryExpensesByMonth(transactions) {
   return _.sortBy(expenseTotals,'month');
 }
 
-function categorizeTransactions(transactions,categories) {
-  return categorizeNode(categories, transactions);
+function categorizeExpenses(transactions) {
+  const categoriesTemplate = require('./categories/categories-flat.json');
+
+  var expenses = _.filter(transactions, 
+  {
+    "bucket": ["Expense"]
+  });
+
+  var expensesByCategory = _.groupBy(expenses, e => e.category);
+
+  return categoriesTemplate.map(c => {
+    var key = c.className === 'Miscellaneous' ? c.packageName : c.className;
+    var totalAmount = 0;
+    var monthlyTotals = Array(yearMonths.length).fill(0);
+
+    if(expensesByCategory[key]) {
+      totalAmount = -1 * _.round(_.sum(expensesByCategory[key].map(e => e.amount)));
+      var monthlyExpenses = _.groupBy(expensesByCategory[key], e => e.yearMonth);
+
+      monthlyTotals = yearMonths.map(ym => {
+        return monthlyExpenses[ym] ?
+        -1 * _.round(_.sum(monthlyExpenses[ym].map(e => e.amount))) : 0;
+      })
+    }
+
+    return {
+      "packageName": c.packageName,
+      "className": c.className,
+      "value": totalAmount >= 0 ? totalAmount : 0,
+      "valueByMonth": monthlyTotals
+    }
+
+  })
 }
 
 function queryCategoryAmount(category, transactions) {
   var amounts = _.filter(transactions, 
-    {'category': category});
+    {'category': category}
+    );
+  var totalAmount = -1 * _.round(_.sum(amounts.map(t => {return t.amount})));
 
-  return _.round(_.sum(amounts.map(t => {return t.amount})));
+  return totalAmount > 0 ? totalAmount : 0;
 }
 
 function categorizeNode(node, transactions) {
