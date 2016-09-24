@@ -9,7 +9,6 @@ var moment = require('moment');
 
 function loadMintTransactions(year) {
   myAirtable.getAllTransactions(year + ' Transactions',compareMintAirtableTransactions);
-  
 }
 
 function compareMintAirtableTransactions(airtableTransactions) {

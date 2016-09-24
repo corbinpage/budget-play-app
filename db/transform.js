@@ -53,19 +53,17 @@ function querybucketTotals(transactions) {
 }
 
 function queryExpensesByMonth(transactions) {
-  var expenses = _.filter(transactions, 
-  {
-    "bucket": ["Expense"]
-  });
-
+  var expenses = _.filter(transactions, {"flow": "Outflow"});
   var groupMonthlyExpenses = _.groupBy(expenses, e => e.yearMonth);
   var expenseTotals = [];
 
   _.forOwn(groupMonthlyExpenses, (value, key, object) => {
     var monthlyExpenseTotals = value.map(t => t.amount);
+    var monthlyRecurringExpenseTotals = 0; 
     var monthlyRecurringExpenseTotals = _.filter(value, 
     {
-      "bucket": ["Recurring"]
+      "flow": "Outflow",
+      "bucket": ["Expense", "Recurring"]
     })
     .map(t => t.amount)
 

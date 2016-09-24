@@ -9,10 +9,11 @@ class Transaction {
       this.date = data.get('Date');
       this.yearMonth = data.get('Year-Month');
       this.name = data.get('Description');
-      this.category = data.get('Category');
       this.amount = Number(data.get('Amount'));
       this.mintAmount = Number(data.get('Mint Amount'));
+      this.flow = data.get('Flow');
       this.bucket = data.get('Bucket');
+      this.category = data.get('Category');
       this.cj = data.get('CJ?');    
       this.account = data.get('Account');    
     } else if (type === 'Mint') {
