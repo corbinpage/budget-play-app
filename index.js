@@ -13,14 +13,14 @@ $.fn.dataTable.ext.search.push(function(settings, data, index) {
 
 
 $(function() {
-  $('.monthlyTabs a:first').tab('show')
+  $('.monthlyTabs a:first').tab('show')  
   $('.monthlyTabs a').click(function (e) {
-    e.preventDefault()
-    // yearMonth = $(this).attr('data-yearMonth');
-    // table.draw();
+    e.preventDefault();
+    yearMonth = $(this).attr('data-yearMonth');
+    table.draw();
     $(this).tab('show');
 
-  })
+  });
 
 
 
