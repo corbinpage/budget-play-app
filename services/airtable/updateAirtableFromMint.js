@@ -17,7 +17,7 @@ function compareMintAirtableTransactions(airtableTransactions) {
     return {name: temp.name, mintAmount: temp.mintAmount, date: temp.date};
   })
 
-  var filePath = path.join(__dirname, '../../tmp/seed-9-2-2016.csv');
+  var filePath = path.join(__dirname, '../../tmp/seed-9-26-2016.csv');
   fs.readFile(filePath, {encoding: 'utf-8'}, function(err,data){
     parse(data, {}, function(err, output){
       output.shift();
@@ -28,18 +28,19 @@ function compareMintAirtableTransactions(airtableTransactions) {
 
       output.forEach(o => {
         var mintTransaction = new Transaction('Mint', o);
+        mintTransaction.status = 'New';
 
         if(moment(mintTransaction.date,'YYYY-MM-DD').format('YYYY') !== '2016') {
           priorYearCount++;
-          console.log('Prior year transaction: ' + mintTransaction.date);
+          // console.log('Prior year transaction: ' + mintTransaction.date);
         } else if(mintTransaction.isDuplicate(currentTransactions))  {
           duplicateCount++;
-          console.log("Duplicate Found: " + mintTransaction.name + " " + mintTransaction.date);
+          // console.log("Duplicate Found: " + mintTransaction.name + " " + mintTransaction.date);
         } else {
+          mintTransaction.runRules();
           myAirtable.writeTransaction(mintTransaction);
           newTransactionCount++;
           console.log("Wrote new Transaction: " + mintTransaction.name + ' ' + mintTransaction.mintAmount + ' ' + mintTransaction.date);
-        // writeToAirtable(o);
       }
     })
       console.log("Prior year count: " + priorYearCount);

@@ -151,6 +151,8 @@ exports.writeTransaction = function (transaction) {
     "Mint Account": transaction.account,
     "Mint Date": transaction.date,
     "Bucket": transaction.bucket,
+    "Flow": transaction.flow,
+    "Status": transaction.status,
   }, function(err, record) {
     if (err) { console.log(err); return; }
     // console.log(record);

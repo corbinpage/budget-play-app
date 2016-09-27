@@ -53,7 +53,10 @@ function querybucketTotals(transactions) {
 }
 
 function queryExpensesByMonth(transactions) {
-  var expenses = _.filter(transactions, {"flow": "Outflow"});
+  var expenses = _.filter(transactions, {
+    "flow": "Outflow",
+    "bucket": ["Expense"]
+  });
   var groupMonthlyExpenses = _.groupBy(expenses, e => e.yearMonth);
   var expenseTotals = [];
 

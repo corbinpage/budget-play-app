@@ -13,22 +13,21 @@ class Transaction {
       this.mintAmount = Number(data.get('Mint Amount'));
       this.flow = data.get('Flow');
       this.bucket = data.get('Bucket');
-      this.category = data.get('Category');
-      this.cj = data.get('CJ?');    
+      this.category = data.get('Category');  
       this.account = data.get('Account');    
     } else if (type === 'Mint') {
-      // this.id = ;
+      // this.id
       this.date = moment(data[0]).format('YYYY-MM-DD');
       this.yearMonth = _.join([_.split(data[0], '/')[2],_.split(data[0], '/')[0]],'-');
       this.name = data[1];
-      this.mintOriginalDescription = data[2];
-      this.category = data[5];
       this.amount = Number(data[3]);
       this.mintAmount = Number(data[3]);
+      // this.flow
+      this.bucket = [];
+      this.category = data[5];
+      this.account = data[6];        
+      this.mintOriginalDescription = data[2];
       this.mintTransactionType = data[4];
-      this.bucket = ['New'];
-      // this.cj = ;    
-      this.account = data[6];      
     }
   }
 
@@ -43,6 +42,32 @@ class Transaction {
 
     return !_.isEmpty(match);
   }
+
+  runRules() {
+    
+    // ---------- Flow ----------
+    const MINT_CATEGORIES_TRANSFER = ['Transfer', 'Credit Card Payment'];
+    const MINT_TRANSACTION_TYPE_TEXT_CREDIT = 'credit';
+    const MINT_TRANSACTION_TYPE_TEXT_DEBIT = 'debit';
+
+    if(_.includes(MINT_CATEGORIES_TRANSFER, this.category)) {
+      this.flow = 'Transfer';
+    }
+    else if(this.mintTransactionType === MINT_TRANSACTION_TYPE_TEXT_CREDIT) {
+      this.flow = 'Inflow';
+    } else if(this.mintTransactionType === MINT_TRANSACTION_TYPE_TEXT_DEBIT) {
+      this.flow = 'Outflow';
+    }    
+    
+    // ---------- CJ ----------
+    const MINT_ACCOUNT_TEXT_CITI_CJ_CREDIT_CARD = 'Citi Double Cash Card';
+
+    if(this.account === MINT_ACCOUNT_TEXT_CITI_CJ_CREDIT_CARD) {
+      this.bucket.push('CJ');
+    }
+  }
+
+
 
 }
 
